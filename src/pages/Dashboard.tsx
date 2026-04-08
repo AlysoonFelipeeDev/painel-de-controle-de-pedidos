@@ -1,4 +1,5 @@
 import { DashboardFilters } from "../components/DashboardFilters";
+import { DashboardMetrics } from "../components/DashboardMetrics";
 import { OrdersTable } from "../components/OrdersTable";
 import { PageHeader, PageShell, PageSubtitle, PageTitle } from "../components/styles/PageShell";
 import { useOrder } from "../hooks/useOrders";
@@ -14,10 +15,7 @@ export function Dashboard() {
     const dateLimit = new Date()
     dateLimit.setHours(0, 0, 0, 0)
     dateLimit.setDate(today.getDate() - days)
-    console.log('Hoje:', today)
-console.log('Data limite:', dateLimit)
-console.log('Primeiro pedido createdAt:', orders[0]?.createdAt)
-console.log('Primeiro pedido em Date:', new Date(orders[0]?.createdAt))
+
     const ordersFiltered = orders.filter(order => {
         if(filters.status !== 'todos' && order.status !== filters.status) {
             return false
@@ -43,6 +41,7 @@ console.log('Primeiro pedido em Date:', new Date(orders[0]?.createdAt))
                 <PageTitle>Painel de Pedidos</PageTitle>
                 <PageSubtitle>Visão geral de logistica e indicadores operacionais</PageSubtitle>
             </PageHeader>
+            <DashboardMetrics orders={orders}/>
             <DashboardFilters/>
             <OrdersTable orders={ordersFiltered}/>
         </PageShell>

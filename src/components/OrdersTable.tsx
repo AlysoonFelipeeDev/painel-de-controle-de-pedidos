@@ -1,11 +1,14 @@
 import styled from "styled-components"
 import type { Order } from "../types/order"
 import { format } from "date-fns"
+import { useNavigate } from "react-router-dom"
 
 interface OrderTableProps {
     orders: Order[]
 }
 export function OrdersTable({orders}: OrderTableProps){
+    const navigate = useNavigate()
+
     return (
         <Panel aria-label="Lista de pedidos">
             <HeadRow>
@@ -26,7 +29,7 @@ export function OrdersTable({orders}: OrderTableProps){
                     {orders.map(order => {
                     const lastUpdate = order.statusHistory.at(-1)
                     return (
-                        <tr key={order.id}>
+                        <tr key={order.id} onClick={() => navigate(`/pedido/${order.id}`)}>
                             <Td>
                             <Code>{order.trackingCode}</Code>
                             </Td>

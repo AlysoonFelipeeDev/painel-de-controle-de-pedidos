@@ -2,13 +2,16 @@ import styled from "styled-components"
 import { PageHeader, PageShell, PageTitle } from "../components/styles/PageShell"
 import { useParams } from "react-router-dom"
 import { useOrderById } from "../hooks/useOrderById"
+import { OrderInfoCard } from "../components/OrderInfoCard"
+import { OrderTimeline } from "../components/OrderTimeline"
+import { OrderDetailsBackButton } from "../components/OrderDetailsBackButton"
 
 export function OrderDetails() {
   const { id } = useParams()
   if(!id) return <div>ID nao encontrado</div>
 
   const {data: order, isLoading, isError  } = useOrderById(id)
-  
+
   if (isLoading) return <div>Carregando...</div>
   if (isError) return <div>Erro ao buscar pedido</div>
   if(!order) return <div>Pedido não encontrado</div>
@@ -16,15 +19,14 @@ export function OrderDetails() {
     return (
       <PageShell>
         <TopBar>
-          
+          <OrderDetailsBackButton />
         </TopBar>
         <PageHeader>
           <PageTitle>Detalhes do pedido</PageTitle>
         </PageHeader>
         <Stack>
-          <p>Código: {order.trackingCode}</p>
-          <p>Cliente: {order.customer}</p>
-          <p>Valor: R$ {order.value}</p>
+          <OrderTimeline order={order}/>
+          <OrderInfoCard order={order}/>
         </Stack>
       </PageShell>
     )

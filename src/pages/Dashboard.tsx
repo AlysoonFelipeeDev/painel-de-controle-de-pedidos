@@ -9,12 +9,16 @@ export function Dashboard() {
     const filters = useAppSelector(state => state.filters)
 
     const today = new Date()
+    today.setHours(0, 0, 0, 0)
     const days = filters.period === '7d' ? 7 : filters.period === '30d' ? 30 : 90
     const dateLimit = new Date()
+    dateLimit.setHours(0, 0, 0, 0)
     dateLimit.setDate(today.getDate() - days)
-
+    console.log('Hoje:', today)
+console.log('Data limite:', dateLimit)
+console.log('Primeiro pedido createdAt:', orders[0]?.createdAt)
+console.log('Primeiro pedido em Date:', new Date(orders[0]?.createdAt))
     const ordersFiltered = orders.filter(order => {
-
         if(filters.status !== 'todos' && order.status !== filters.status) {
             return false
         }

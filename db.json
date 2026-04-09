@@ -49,14 +49,14 @@
             "customer": "Allan Costa",
             "status": "entregue",
             "value": 180.00,
-            "createdAt": "2026-04-08T10:00:00Z",
+            "createdAt": "2026-04-09T10:00:00Z",
             "estimatedDelivery": "2026-04-11T10:00:00Z",
             "deliveredAt": "2026-04-08T10:00:00Z",
             "statusHistory": [
-                {"status": "pendente", "timestamp": "2026-04-08T10:00:00Z"},
-                {"status": "processando", "timestamp": "2026-04-08T10:00:00Z"},
-                {"status": "em_rota", "timestamp":"2026-04-08T10:00:00Z"},
-                {"status": "entregue", "timestamp":"2026-04-08T10:00:00Z" }
+                {"status": "pendente", "timestamp": "2026-04-09T10:00:00Z"},
+                {"status": "processando", "timestamp": "2026-04-09T10:00:00Z"},
+                {"status": "em_rota", "timestamp":"2026-04-09T10:00:00Z"},
+                {"status": "entregue", "timestamp":"2026-04-09T10:00:00Z" }
             ]
         },
 
@@ -109,7 +109,7 @@
             "customer": "Igor Ferreira",
             "status": "pendente",
             "value": 125.40,
-            "createdAt": "2026-04-08T09:30:00Z",
+            "createdAt": "2026-04-09T09:30:00Z",
             "estimatedDelivery": "2026-04-13T09:30:00Z",
             "statusHistory": [
                 {"status": "pendente", "timestamp": "2026-04-09T09:30:00Z"}

@@ -5,7 +5,7 @@
             "trackingCode": "910111213",
             "customer":"Ana",
             "status":"processando",
-            "value": 40,
+            "value": 40.00,
             "createdAt": "2026-04-01T10:00:00Z",
             "estimatedDelivery": "2026-04-10T10:00:00Z",
             "statusHistory": [
@@ -18,7 +18,7 @@
             "trackingCode":"1415161718",
             "customer":"Leticia",
             "status":"em_rota",
-            "value": 100,
+            "value": 100.10,
             "createdAt": "2026-04-01T10:00:00Z",
             "estimatedDelivery": "2026-04-09T10:00:00Z",
             "statusHistory": [
@@ -32,7 +32,7 @@
             "trackingCode": "1920212223",
             "customer": "Priscila",
             "status": "entregue",
-            "value": 180,
+            "value": 180.90,
             "createdAt": "2026-04-02T10:00:00Z",
             "estimatedDelivery": "2026-04-10T10:00:00Z",
             "deliveredAt": "2026-04-09T10:00:00Z",
@@ -48,7 +48,7 @@
             "trackingCode": "1920212223",
             "customer": "Allan",
             "status": "entregue",
-            "value": 180,
+            "value": 180.00,
             "createdAt": "2026-04-08T10:00:00Z",
             "estimatedDelivery": "2026-04-11T10:00:00Z",
             "deliveredAt": "2026-04-08T10:00:00Z",
@@ -57,6 +57,50 @@
                 {"status": "processando", "timestamp": "2026-04-08T10:00:00Z"},
                 {"status": "em_rota", "timestamp":"2026-04-08T10:00:00Z"},
                 {"status": "entregue", "timestamp":"2026-04-08T10:00:00Z" }
+            ]
+        },
+
+        {
+            "id": "5",
+            "trackingCode": "1516171819",
+            "customer": "Fernanda Rocha",
+            "status": "processando",
+            "value": 215.80,
+            "createdAt": "2026-04-07T14:00:00Z",
+            "estimatedDelivery": "2026-04-12T14:00:00Z",
+            "statusHistory": [
+                {"status": "pendente", "timestamp": "2026-04-07T14:00:00Z"},
+                {"status": "processando", "timestamp": "2026-04-08T09:00:00Z"}
+            ]
+        },
+        {
+            "id": "6",
+            "trackingCode": "2021222324",
+            "customer": "Gabriel Martins",
+            "status": "em_rota",
+            "value": 189.00,
+            "createdAt": "2026-04-06T08:00:00Z",
+            "estimatedDelivery": "2026-04-10T08:00:00Z",
+            "statusHistory": [
+                {"status": "pendente", "timestamp": "2026-04-06T08:00:00Z"},
+                {"status": "processando", "timestamp": "2026-04-08T12:00:00Z"},
+                {"status": "em_rota", "timestamp": "2026-04-09T16:00:00Z"}
+            ]
+        },
+        {
+            "id": "7",
+            "trackingCode": "2526272829",
+            "customer": "Helena Souza",
+            "status": "entregue",
+            "value": 560.50,
+            "createdAt": "2026-03-31T10:00:00Z",
+            "estimatedDelivery": "2026-04-05T10:00:00Z",
+            "deliveredAt": "2026-04-04T15:00:00Z",
+            "statusHistory": [
+                {"status": "pendente", "timestamp": "2026-03-31T10:00:00Z"},
+                {"status": "processando", "timestamp": "2026-04-01T11:00:00Z"},
+                {"status": "em_rota", "timestamp": "2026-04-03T09:00:00Z"},
+                {"status": "entregue", "timestamp": "2026-04-04T15:00:00Z"}
             ]
         }
     ]

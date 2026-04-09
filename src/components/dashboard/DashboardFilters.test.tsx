@@ -61,7 +61,7 @@ describe('DashboardFilters', () => {
             await user.click(btnClear)
 
             expect(selectStatus).toHaveValue('todos')
-            expect(selectPeriod).toHaveValue('7d')
+            expect(selectPeriod).toHaveValue('all')
             expect(selectSearch).toHaveValue('')
 
         })

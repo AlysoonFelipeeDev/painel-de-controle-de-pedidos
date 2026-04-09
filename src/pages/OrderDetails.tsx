@@ -2,9 +2,9 @@ import styled from "styled-components"
 import { PageHeader, PageShell, PageTitle } from "../components/styles/PageShell"
 import { useParams } from "react-router-dom"
 import { useOrderById } from "../hooks/useOrderById"
-import { OrderInfoCard } from "../components/OrderInfoCard"
-import { OrderTimeline } from "../components/OrderTimeline"
-import { OrderDetailsBackButton } from "../components/OrderDetailsBackButton"
+import { OrderDetailsBackButton } from "../components/order-details/OrderDetailsBackButton"
+import { OrderTimeline } from "../components/order-details/OrderTimeline"
+import { OrderInfoCard } from "../components/order-details/OrderInfoCard"
 
 export function OrderDetails() {
   const { id } = useParams()

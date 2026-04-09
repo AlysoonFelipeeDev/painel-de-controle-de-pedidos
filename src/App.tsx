@@ -1,6 +1,6 @@
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import { Dashboard } from './pages/Dashboard'
-import { Order } from './pages/Order'
+import { OrderDetails } from './pages/OrderDetails'
 import { GlobalStyles } from './components/styles/GlobalStyles'
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path='/' element={<Dashboard/>} />
-            <Route path='/pedido/:id' element={<Order/>} />
+            <Route path='/pedido/:id' element={<OrderDetails/>} />
           </Routes>
         </BrowserRouter>
     </>

@@ -1,7 +1,8 @@
 import styled from "styled-components"
-import { useAppDispatch, useAppSelector } from "../store/reduxHooks"
-import { clearFilters, setPeriod, setSearchOrder, setStatus } from "../store/filterSlice"
-import type { OrderStatus } from "../types/order"
+import { useAppDispatch, useAppSelector } from "../../store/reduxHooks"
+import { clearFilters, setPeriod, setSearchOrder, setStatus } from "../../store/filterSlice"
+import type { OrderStatus } from "../../types/order"
+
 
 type Period = '7d' | '30d' | '90d'
 

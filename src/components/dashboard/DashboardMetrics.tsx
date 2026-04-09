@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import type { Order } from "../types/order"
+import type { Order } from "../../types/order"
 
 interface DashboardProps {
     orders: Order[]

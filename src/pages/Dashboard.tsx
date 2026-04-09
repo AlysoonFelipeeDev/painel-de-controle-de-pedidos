@@ -1,6 +1,6 @@
-import { DashboardFilters } from "../components/DashboardFilters";
-import { DashboardMetrics } from "../components/DashboardMetrics";
-import { OrdersTable } from "../components/OrdersTable";
+import { DashboardFilters } from "../components/dashboard/DashboardFilters";
+import { DashboardMetrics } from "../components/dashboard/DashboardMetrics";
+import { OrdersTable } from "../components/order-details/OrdersTable";
 import { PageHeader, PageShell, PageSubtitle, PageTitle } from "../components/styles/PageShell";
 import { useOrder } from "../hooks/useOrders";
 import { useAppSelector } from "../store/reduxHooks";

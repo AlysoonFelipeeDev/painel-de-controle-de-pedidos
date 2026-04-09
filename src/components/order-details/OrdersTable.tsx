@@ -28,6 +28,8 @@ export function OrdersTable({orders}: OrderTableProps){
                 <tbody>
                     {orders.map(order => {
                     const lastUpdate = order.statusHistory.at(-1)
+                    if(!lastUpdate) return null
+                    
                     return (
                         <tr key={order.id} onClick={() => navigate(`/pedido/${order.id}`)}>
                             <Td>

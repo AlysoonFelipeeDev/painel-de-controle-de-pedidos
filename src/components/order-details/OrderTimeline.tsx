@@ -1,6 +1,6 @@
 import styled from "styled-components"
-import type { Order } from "../types/order"
 import { format } from "date-fns"
+import type { Order } from "../../types/order"
 
 interface OrderTimelineProps {
     order: Order

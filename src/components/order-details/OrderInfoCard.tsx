@@ -8,6 +8,8 @@ interface OrderInfoCardProps {
 }
 export function OrderInfoCard({order}: OrderInfoCardProps){
     const lastUpdate = order.statusHistory.at(-1)
+    if(!lastUpdate) return null
+    
     return (
         <Card aria-label="Informações do pedido">
             <Head>

@@ -21,15 +21,15 @@ export function DashboardMetrics({orders} : DashboardProps) {
     
     return (
         <Grid>
-            <Card>
+            <Card data-testid='metric-total'>
                 <Label>Total Pedidos</Label>
                 <Value>{totalOrder}</Value>
             </Card>
-            <Card>
+            <Card data-testid='metric-today'>
                 <Label>Pedidos hoje</Label>
                 <Value>{totalOrderDay}</Value>
             </Card>
-            <Card>
+            <Card data-testid='metric-transit'>
                 <Label>Em trânsito</Label>
                 <Value>{onRouteDelivery}</Value>
             </Card>

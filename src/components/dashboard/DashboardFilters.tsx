@@ -36,6 +36,7 @@ export function DashboardFilters() {
             value={period}
             onChange={(e) => dispatch(setPeriod(e.target.value as Period))}
             >
+                <option value="all">Todos</option>
                 <option value="7d">Últimos 7 dias</option>
                 <option value="30d">Últimos 30 dias</option>
                 <option value="90d">Últimos 90 dias</option>

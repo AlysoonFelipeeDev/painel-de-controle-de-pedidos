@@ -3,13 +3,13 @@ import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 interface FilterSlice {
     status: 'todos'| 'pendente' | 'processando' | 'em_rota' | 'entregue' | 'cancelado',
     searchOrder: string
-    period: '7d' | '30d' | '90d'
+    period: 'all' | '7d' | '30d' | '90d'
 }
 
 const initialState: FilterSlice = {
     status: 'todos',
     searchOrder: '',
-    period: '7d' 
+    period: 'all' 
 }
 export const filterSlice = createSlice({
     name: 'filters',
@@ -21,7 +21,7 @@ export const filterSlice = createSlice({
         setSearchOrder: (state, action: PayloadAction<string>) => {
             state.searchOrder = action.payload
         },
-        setPeriod: (state, action: PayloadAction<'7d' | '30d' | '90d'>) => {
+        setPeriod: (state, action: PayloadAction<'all' | '7d' | '30d' | '90d'>) => {
             state.period = action.payload
         },
         clearFilters: () => {

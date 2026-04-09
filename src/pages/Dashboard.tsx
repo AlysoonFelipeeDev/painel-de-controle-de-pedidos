@@ -25,9 +25,15 @@ export function Dashboard() {
             !order.customer.toLowerCase().includes(filters.searchOrder.toLowerCase())) {
                 return false
             }
-        if (new Date(order.createdAt) < dateLimit) {
-            return false  
-        }
+        
+            if (filters.period !== 'all') {  
+                const orderDate = new Date(order.createdAt)
+                orderDate.setHours(0, 0, 0, 0)
+                
+                if (orderDate < dateLimit) {
+                    return false
+                }
+            }
         return true
     })
 

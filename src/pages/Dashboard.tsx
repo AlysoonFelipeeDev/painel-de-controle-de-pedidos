@@ -1,6 +1,7 @@
 import { DashboardFilters } from "../components/dashboard/DashboardFilters";
 import { DashboardMetrics } from "../components/dashboard/DashboardMetrics";
 import { OrdersTable } from "../components/order-details/OrdersTable";
+import { Loading } from "../components/styles/Loading";
 import { PageHeader, PageShell, PageSubtitle, PageTitle } from "../components/styles/PageShell";
 import { useOrder } from "../hooks/useOrders";
 import { useAppSelector } from "../store/reduxHooks";
@@ -37,7 +38,6 @@ export function Dashboard() {
         return true
     })
 
-    if(isLoading) return <div>Carregando...</div>
     if(isError) return <div>Erro ao buscar dados</div>
     
 
@@ -47,9 +47,15 @@ export function Dashboard() {
                 <PageTitle>Painel de Pedidos</PageTitle>
                 <PageSubtitle>Visão geral de logistica e indicadores operacionais</PageSubtitle>
             </PageHeader>
-            <DashboardMetrics orders={orders}/>
-            <DashboardFilters/>
-            <OrdersTable orders={ordersFiltered}/>
+            {isLoading ? 
+                <Loading /> 
+            :
+                <>
+                <DashboardMetrics orders={orders}/>
+                <DashboardFilters/>
+                <OrdersTable orders={ordersFiltered}/>    
+                </>
+            }
         </PageShell>
     )
 }

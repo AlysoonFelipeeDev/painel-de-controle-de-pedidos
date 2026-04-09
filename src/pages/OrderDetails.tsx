@@ -5,6 +5,7 @@ import { useOrderById } from "../hooks/useOrderById"
 import { OrderDetailsBackButton } from "../components/order-details/OrderDetailsBackButton"
 import { OrderTimeline } from "../components/order-details/OrderTimeline"
 import { OrderInfoCard } from "../components/order-details/OrderInfoCard"
+import { Loading } from "../components/styles/Loading"
 
 export function OrderDetails() {
   const { id } = useParams()
@@ -12,9 +13,7 @@ export function OrderDetails() {
 
   const {data: order, isLoading, isError  } = useOrderById(id)
 
-  if (isLoading) return <div>Carregando...</div>
   if (isError) return <div>Erro ao buscar pedido</div>
-  if(!order) return <div>Pedido não encontrado</div>
 
     return (
       <PageShell>
@@ -25,8 +24,16 @@ export function OrderDetails() {
           <PageTitle>Detalhes do pedido</PageTitle>
         </PageHeader>
         <Stack>
-          <OrderTimeline order={order}/>
-          <OrderInfoCard order={order}/>
+          {isLoading ? (
+            <Loading /> 
+          ) : !order ? (
+            <div>Pedido não encontrado</div>
+          ) : (
+          <>
+            <OrderTimeline order={order}/>
+            <OrderInfoCard order={order}/>
+          </>
+          )}
         </Stack>
       </PageShell>
     )
